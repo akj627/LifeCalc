@@ -44,8 +44,13 @@ namespace LifeCalc
             // plug the values from the input into the mortgage formula
 
             double payment = (loanAmount) * (Math.Pow((1 + interestRate / 12), termOfLoan) * interestRate) / (12 * (Math.Pow((1 + interestRate / 12), termOfLoan) - 1));
+            var mortgage = Math.Round(payment, 2, MidpointRounding.AwayFromZero);
+            tblMortgage.Text = mortgage.ToString();
 
-            tblMortgage.Text = Math.Round(payment, 2, MidpointRounding.AwayFromZero).ToString();
+            //pieSliceInterest.Value = mortgage * termOfLoan - loanAmount;
+            //pieSlicePrincipal.Value = loanAmount;
+            pieChart.Series[0].DataPoints[0].Value = mortgage * termOfLoan - loanAmount;
+            pieChart.Series[0].DataPoints[1].Value = loanAmount;
         }
 
         // Sample code for building a localized ApplicationBar
