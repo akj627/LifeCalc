@@ -47,15 +47,15 @@ xmlns:chartEngine="clr-namespace:Telerik.Charting;assembly=Telerik.Windows.Contr
             <TextBlock Text="MORTGAGE PIE" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
             <TextBlock Text="Mortgage" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
-        <toolkit:PhoneTextBox x:Name="txtLoanAmt" InputScope="Number" Hint="Loan Amount ($)" Margin="10,10,240,518" Grid.Row="1"/>
+        <toolkit:PhoneTextBox x:Name="txtLoanAmt" InputScope="Number" Hint="Loan Amount ($)" Margin="10,27,240,501" Grid.Row="1"/>
         <Grid Margin="12,91,96,444" Grid.Row="1">
-            <RadioButton x:Name="radTerm15" Content="15" GroupName="radLoanTem" HorizontalAlignment="Left" Margin="71,0,0,0" VerticalAlignment="Top"/>
-            <RadioButton x:Name="radTerm20" Content="20" GroupName="radLoanTem" HorizontalAlignment="Left" Margin="140,0,0,0" VerticalAlignment="Top"/>
-            <RadioButton x:Name="radTerm30" Content="30" GroupName="radLoanTem" HorizontalAlignment="Left" Margin="215,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.379,0.092"/>
-            <RadioButton x:Name="radTerm10" Content="10" GroupName="radLoanTem" HorizontalAlignment="Left" VerticalAlignment="Top" Width="91" Height="72"/>
+            <RadioButton x:Name="radTerm15" Content="15" GroupName="radLoanTem" HorizontalAlignment="Left" Margin="111,0,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="radTerm20" Content="20" GroupName="radLoanTem" HorizontalAlignment="Left" Margin="180,0,0,0" VerticalAlignment="Top"/>
+            <RadioButton IsChecked="true" x:Name="radTerm30" Content="30" GroupName="radLoanTem" HorizontalAlignment="Left" Margin="255,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.379,0.092"/>
+            <RadioButton x:Name="radTerm10" Content="10" GroupName="radLoanTem" HorizontalAlignment="Left" VerticalAlignment="Top" Width="91" Height="72" Margin="40,0,0,0"/>
         </Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="389,102,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="44" FontSize="32" Text="Years " Foreground="#FF1A37EC"/>
-        <toolkit:PhoneTextBox x:Name="txtIntRate" InputScope="Number" Hint="Interest Rate (%)" Margin="240,10,10,518" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="359,106,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="44" FontSize="32" Text="Years " Foreground="#FF1A37EC"/>
+        <toolkit:PhoneTextBox x:Name="txtIntRate" InputScope="Number" Hint="Interest Rate (%)" Margin="240,29,10,499" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="42,280,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Monthly Payment" VerticalAlignment="Top" FontSize="28"/>
         <Border BorderBrush="Green" BorderThickness="5" HorizontalAlignment="Left" Height="336" Margin="12,261,0,0" Grid.Row="1" VerticalAlignment="Top" Width="450" CornerRadius="6"/>
         <TextBlock HorizontalAlignment="Left" Margin="18,457,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="96" RenderTransformOrigin="0.015,0.918" Width="60" Text="$"/>
@@ -63,18 +63,6 @@ xmlns:chartEngine="clr-namespace:Telerik.Charting;assembly=Telerik.Windows.Contr
         <chart:RadPieChart x:Name="pieChart" Margin="264,267,18,179" Grid.Row="1">
             <chart:PieSeries>
                 <chart:PieSeries.SliceStyles>
-                    <!--<Style TargetType="Path">
-                        <Setter Property="Fill" Value="Orange"/>
-                    </Style>
-
-                    <Style TargetType="Path">
-                        <Setter Property="Fill" Value="Gray"/>
-                    </Style>
-
-                    <Style TargetType="Path">
-                        <Setter Property="Fill" Value="Cyan"/>
-                    </Style>-->
-
                     <Style TargetType="Path">
                         <Setter Property="Fill" Value="Red"/>
                     </Style>
@@ -85,17 +73,20 @@ xmlns:chartEngine="clr-namespace:Telerik.Charting;assembly=Telerik.Windows.Contr
                 </chart:PieSeries.SliceStyles>
 
                 <chart:PieSeries.DataPoints>
-                    <!--<chartEngine:PieDataPoint Value="10"/>
-                    <chartEngine:PieDataPoint Value="4"/>
-                    <chartEngine:PieDataPoint Value="7"/>-->
                     <chartEngine:PieDataPoint x:Name="pieSliceInterest"/>
                     <chartEngine:PieDataPoint x:Name="pieSlicePrincipal"/>
                 </chart:PieSeries.DataPoints>
             </chart:PieSeries>
         </chart:RadPieChart>
-        <Button x:Name="btnCalc" Content="Calculate" HorizontalAlignment="Left" Margin="287,146,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="32" Click="btnCalc_Click"/>
-        <toolkit:PhoneTextBox x:Name="txtTaxes" InputScope="Number" Hint="Taxes/Yr ($)" Margin="10,146,303,382" Grid.Row="1"/>
-        <toolkit:PhoneTextBox x:Name="txtHOA" InputScope="Number" Hint="HOA ($)" Margin="165,146,182,382" Grid.Row="1"/>
+        <Button x:Name="btnCalc" Content="Calc" HorizontalAlignment="Left" Margin="251,171,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="32" Click="btnCalc_Click" Background="{StaticResource PhoneAccentBrush}">
+</Button>
+        <toolkit:PhoneTextBox x:Name="txtTaxes" InputScope="Number" Hint="Taxes/Yr ($)" Margin="10,171,343,357" Grid.Row="1"/>
+        <toolkit:PhoneTextBox x:Name="txtHOA" InputScope="Number" Hint="HOA ($)" Margin="129,171,218,357" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="18,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Loan Amount" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="254,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Interest Rate" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="18,152,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Taxes/Yr" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="177,152,0,0" Grid.Row="1" TextWrapping="Wrap" Text="HOA" VerticalAlignment="Top"/>
+        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="350,172,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="32" Click="btnReset_Click" Background="{StaticResource PhoneInactiveBrush}"/>
 
         <!--ContentPanel - place additional content here-->
 
