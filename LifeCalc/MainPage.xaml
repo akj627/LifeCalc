@@ -44,14 +44,14 @@ xmlns:chartEngine="clr-namespace:Telerik.Charting;assembly=Telerik.Windows.Contr
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="LIFE CALC" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            <TextBlock Text="MORTGAGE PIE" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
             <TextBlock Text="Mortgage" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
         <toolkit:PhoneTextBox x:Name="txtLoanAmt" InputScope="Number" Hint="Loan Amount ($)" Margin="10,10,240,518" Grid.Row="1"/>
         <Grid Margin="12,91,96,444" Grid.Row="1">
-            <RadioButton x:Name="radTerm15" Content="15" GroupName="radLoanTem" HorizontalAlignment="Left" Margin="96,0,0,0" VerticalAlignment="Top"/>
-            <RadioButton x:Name="radTerm20" Content="20" GroupName="radLoanTem" HorizontalAlignment="Left" Margin="186,0,0,0" VerticalAlignment="Top"/>
-            <RadioButton x:Name="radTerm30" Content="30" GroupName="radLoanTem" HorizontalAlignment="Left" Margin="279,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.379,0.092"/>
+            <RadioButton x:Name="radTerm15" Content="15" GroupName="radLoanTem" HorizontalAlignment="Left" Margin="71,0,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="radTerm20" Content="20" GroupName="radLoanTem" HorizontalAlignment="Left" Margin="140,0,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="radTerm30" Content="30" GroupName="radLoanTem" HorizontalAlignment="Left" Margin="215,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.379,0.092"/>
             <RadioButton x:Name="radTerm10" Content="10" GroupName="radLoanTem" HorizontalAlignment="Left" VerticalAlignment="Top" Width="91" Height="72"/>
         </Grid>
         <TextBlock HorizontalAlignment="Left" Margin="389,102,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="44" FontSize="32" Text="Years " Foreground="#FF1A37EC"/>
@@ -93,7 +93,9 @@ xmlns:chartEngine="clr-namespace:Telerik.Charting;assembly=Telerik.Windows.Contr
                 </chart:PieSeries.DataPoints>
             </chart:PieSeries>
         </chart:RadPieChart>
-        <Button x:Name="btnCalc" Content="Calculate" HorizontalAlignment="Left" Margin="145,143,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="32" Click="btnCalc_Click"/>
+        <Button x:Name="btnCalc" Content="Calculate" HorizontalAlignment="Left" Margin="287,146,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="32" Click="btnCalc_Click"/>
+        <toolkit:PhoneTextBox x:Name="txtTaxes" InputScope="Number" Hint="Taxes/Yr ($)" Margin="10,146,303,382" Grid.Row="1"/>
+        <toolkit:PhoneTextBox x:Name="txtHOA" InputScope="Number" Hint="HOA ($)" Margin="165,146,182,382" Grid.Row="1"/>
 
         <!--ContentPanel - place additional content here-->
 
